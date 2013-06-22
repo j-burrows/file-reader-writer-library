@@ -1,48 +1,48 @@
 /*
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	Filename:	Primes.h
+ *	Filename:	file_writer.h
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Provide functions for making lists of primes, and determing if numbers are
- *				prime.
+ *	Purpose:	Provide functions that writes arrays to a text or binary file.
  === === === === === === === === === === === === === === === === === === === === === === ===
  *	Author:		Jonathan Burrows
- *	Date:		Nov 20 2012
+ *	Date:		November 30th 2012
  === === === === === === === === === === === === === === === === === === === === === === ===
  */
-#ifndef PRIMES_H
-#define PRIMES_H 1
+#ifndef FILE_WRITER_H
+#define FILE_WRITER_H 1
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include "linkedlist_ull.h"
+#include <string.h>
 
 /*
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	is_prime
+ *	Function:	fwrite_array
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Checks if a given number is prime.
+ *	Purpose:	Writes the elements of an integer array to a file, seperated by spaces.
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		primes,				The list of known primes.
- *				number, 			The number who will be checked to see if a prime.
- *	@return:	is_prime,			1 if number is prime.
- *									0 if number is not prime.
+ *	@param:		filename,		Location the contents will be written to.
+ *				array,			Array whos elements will be written.
+ *				array_len,		Length of the array being written.
+ *	@return:	1,				Write was successful.
+ *				0,				Write was unsucessful.
  === === === === === === === === === === === === === === === === === === === === === === ===
  */
-extern int is_prime(list_llu* primes, unsigned long long number);
+extern int fwrite_array(char* filename, int* array, size_t array_len);
 
 /*
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	add_if_prime
+ *	Function:	fwrite_array_binary
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	If the given number is a prime, it is added to the end of the list.
+ *	Purpose:	Writes the contents of a binary array to a binary file.
  === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		primes,				The list of known primes.
- *				number, 			the number that is checked to be prime.
- *	@return:	1,					The check and add was successful.
- *				0,					There was an error while adding a prime number to list. 
+ *	@param:		filename,		Location of the file to be read.
+ *				array,			Array whos binary elements will be written.
+ *				array_len,		Length of the array being written.
+ *	@return:	1,				Write was successful.
+ *				0,				Write was unsucessful.
  === === === === === === === === === === === === === === === === === === === === === === ===
  */
-extern int add_if_prime(list_llu* primes, unsigned long long number);
+extern int fwrite_array_binary(char* filename, int* array, size_t array_len);
 
 #endif
