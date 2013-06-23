@@ -1,30 +1,12 @@
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Filename:	file_writer.c
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Provide functions that writes arrays to a text or binary file.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Author:		Jonathan Burrows
- *	Date:		November 30th 2012
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Dependancy:	stdio.h
- *				stdlib.h
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ |	Filename:	file_writer.c
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 #include "file_writer.h"
 
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	fwrite_array
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Writes the elements of an integer array to a file, seperated by spaces.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		filename,		Location the contents will be written to.
- *				array,			Array whos elements will be written.
- *				array_len,		Length of the array being written.
- *	@return:	1,				Write was successful.
- *				0,				Write was unsucessful.
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ |	Function:	fwrite_array
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 int fwrite_array(char* filename, int* array, size_t array_len){
 	FILE* out;
@@ -47,18 +29,9 @@ int fwrite_array(char* filename, int* array, size_t array_len){
 	return 1;									/*Return successful value.*/
 }
 
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	fwrite_array_binary
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Writes the contents of a binary array to a binary file.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		filename,		Location of the file to be read.
- *				array,			Array whos binary elements will be written.
- *				array_len,		Length of the array being written.
- *	@return:	1,				Write was successful.
- *				0,				Write was unsucessful.
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ |	Function:	fwrite_array_binary
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 int fwrite_array_binary(char* filename, int* array, size_t array_len){
 	FILE* out;
